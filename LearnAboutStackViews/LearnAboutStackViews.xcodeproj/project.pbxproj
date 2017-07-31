@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291401F2E18C2009CC565 /* AppDelegate.swift */; };
+		FDD291431F2E18C2009CC565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291421F2E18C2009CC565 /* ViewController.swift */; };
+		FDD291461F2E18C2009CC565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD291441F2E18C2009CC565 /* Main.storyboard */; };
+		FDD291481F2E18C2009CC565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDD291471F2E18C2009CC565 /* Assets.xcassets */; };
+		FDD2914B1F2E18C2009CC565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD291491F2E18C2009CC565 /* LaunchScreen.storyboard */; };
+		FDD291531F2E19EE009CC565 /* EHColorableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291521F2E19EE009CC565 /* EHColorableStackView.swift */; };
+		FDD291621F2E1D44009CC565 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FDD291571F2E1D44009CC565 /* LICENSE.txt */; };
+		FDD291631F2E1D44009CC565 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD291581F2E1D44009CC565 /* OpenSans-Bold.ttf */; };
+		FDD291641F2E1D44009CC565 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD291591F2E1D44009CC565 /* OpenSans-BoldItalic.ttf */; };
+		FDD291651F2E1D44009CC565 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD2915A1F2E1D44009CC565 /* OpenSans-ExtraBold.ttf */; };
+		FDD291661F2E1D44009CC565 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD2915B1F2E1D44009CC565 /* OpenSans-ExtraBoldItalic.ttf */; };
+		FDD291671F2E1D44009CC565 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD2915C1F2E1D44009CC565 /* OpenSans-Italic.ttf */; };
+		FDD291681F2E1D44009CC565 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD2915D1F2E1D44009CC565 /* OpenSans-Light.ttf */; };
+		FDD291691F2E1D44009CC565 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD2915E1F2E1D44009CC565 /* OpenSans-LightItalic.ttf */; };
+		FDD2916A1F2E1D44009CC565 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD2915F1F2E1D44009CC565 /* OpenSans-Regular.ttf */; };
+		FDD2916B1F2E1D44009CC565 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD291601F2E1D44009CC565 /* OpenSans-Semibold.ttf */; };
+		FDD2916C1F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD291611F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf */; };
+		FDD2916E1F2E2B69009CC565 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD2916D1F2E2B69009CC565 /* UIColor+Extensions.swift */; };
+		FDD291701F2E3656009CC565 /* EHStackViewSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD2916F1F2E3656009CC565 /* EHStackViewSettingsViewController.swift */; };
+		FDD291731F2E4DED009CC565 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291721F2E4DED009CC565 /* UIStackView+Extensions.swift */; };
+		FDD291751F2E7060009CC565 /* EHStackViewSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FDD2913D1F2E18C2009CC565 /* LearnAboutStackViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnAboutStackViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDD291401F2E18C2009CC565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDD291421F2E18C2009CC565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDD291451F2E18C2009CC565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDD291471F2E18C2009CC565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDD2914A1F2E18C2009CC565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDD2914C1F2E18C2009CC565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDD291521F2E19EE009CC565 /* EHColorableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHColorableStackView.swift; sourceTree = "<group>"; };
+		FDD291571F2E1D44009CC565 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		FDD291581F2E1D44009CC565 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		FDD291591F2E1D44009CC565 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		FDD2915A1F2E1D44009CC565 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FDD2915B1F2E1D44009CC565 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		FDD2915C1F2E1D44009CC565 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		FDD2915D1F2E1D44009CC565 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		FDD2915E1F2E1D44009CC565 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		FDD2915F1F2E1D44009CC565 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		FDD291601F2E1D44009CC565 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		FDD291611F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		FDD2916D1F2E2B69009CC565 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FDD2916F1F2E3656009CC565 /* EHStackViewSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHStackViewSettingsViewController.swift; sourceTree = "<group>"; };
+		FDD291721F2E4DED009CC565 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHStackViewSettingsModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDD2913A1F2E18C2009CC565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDD291341F2E18C2009CC565 = {
+			isa = PBXGroup;
+			children = (
+				FDD2913F1F2E18C2009CC565 /* LearnAboutStackViews */,
+				FDD2913E1F2E18C2009CC565 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDD2913E1F2E18C2009CC565 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDD2913D1F2E18C2009CC565 /* LearnAboutStackViews.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDD2913F1F2E18C2009CC565 /* LearnAboutStackViews */ = {
+			isa = PBXGroup;
+			children = (
+				FDD291711F2E4DCB009CC565 /* Extensions */,
+				FDD291541F2E1CEA009CC565 /* Resources */,
+				FDD291401F2E18C2009CC565 /* AppDelegate.swift */,
+				FDD291421F2E18C2009CC565 /* ViewController.swift */,
+				FDD291441F2E18C2009CC565 /* Main.storyboard */,
+				FDD291471F2E18C2009CC565 /* Assets.xcassets */,
+				FDD291491F2E18C2009CC565 /* LaunchScreen.storyboard */,
+				FDD2914C1F2E18C2009CC565 /* Info.plist */,
+				FDD291521F2E19EE009CC565 /* EHColorableStackView.swift */,
+				FDD2916F1F2E3656009CC565 /* EHStackViewSettingsViewController.swift */,
+				FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */,
+			);
+			path = LearnAboutStackViews;
+			sourceTree = "<group>";
+		};
+		FDD291541F2E1CEA009CC565 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FDD291551F2E1CF2009CC565 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FDD291551F2E1CF2009CC565 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FDD291561F2E1CFA009CC565 /* OpenSans */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		FDD291561F2E1CFA009CC565 /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				FDD291571F2E1D44009CC565 /* LICENSE.txt */,
+				FDD291581F2E1D44009CC565 /* OpenSans-Bold.ttf */,
+				FDD291591F2E1D44009CC565 /* OpenSans-BoldItalic.ttf */,
+				FDD2915A1F2E1D44009CC565 /* OpenSans-ExtraBold.ttf */,
+				FDD2915B1F2E1D44009CC565 /* OpenSans-ExtraBoldItalic.ttf */,
+				FDD2915C1F2E1D44009CC565 /* OpenSans-Italic.ttf */,
+				FDD2915D1F2E1D44009CC565 /* OpenSans-Light.ttf */,
+				FDD2915E1F2E1D44009CC565 /* OpenSans-LightItalic.ttf */,
+				FDD2915F1F2E1D44009CC565 /* OpenSans-Regular.ttf */,
+				FDD291601F2E1D44009CC565 /* OpenSans-Semibold.ttf */,
+				FDD291611F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = OpenSans;
+			sourceTree = "<group>";
+		};
+		FDD291711F2E4DCB009CC565 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDD2916D1F2E2B69009CC565 /* UIColor+Extensions.swift */,
+				FDD291721F2E4DED009CC565 /* UIStackView+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDD2913C1F2E18C2009CC565 /* LearnAboutStackViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDD2914F1F2E18C2009CC565 /* Build configuration list for PBXNativeTarget "LearnAboutStackViews" */;
+			buildPhases = (
+				FDD291391F2E18C2009CC565 /* Sources */,
+				FDD2913A1F2E18C2009CC565 /* Frameworks */,
+				FDD2913B1F2E18C2009CC565 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LearnAboutStackViews;
+			productName = LearnAboutStackViews;
+			productReference = FDD2913D1F2E18C2009CC565 /* LearnAboutStackViews.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDD291351F2E18C2009CC565 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "HeirPlay Software";
+				TargetAttributes = {
+					FDD2913C1F2E18C2009CC565 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 82A2S5FGTA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FDD291381F2E18C2009CC565 /* Build configuration list for PBXProject "LearnAboutStackViews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDD291341F2E18C2009CC565;
+			productRefGroup = FDD2913E1F2E18C2009CC565 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDD2913C1F2E18C2009CC565 /* LearnAboutStackViews */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDD2913B1F2E18C2009CC565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDD291671F2E1D44009CC565 /* OpenSans-Italic.ttf in Resources */,
+				FDD291641F2E1D44009CC565 /* OpenSans-BoldItalic.ttf in Resources */,
+				FDD291621F2E1D44009CC565 /* LICENSE.txt in Resources */,
+				FDD2916B1F2E1D44009CC565 /* OpenSans-Semibold.ttf in Resources */,
+				FDD291651F2E1D44009CC565 /* OpenSans-ExtraBold.ttf in Resources */,
+				FDD2914B1F2E18C2009CC565 /* LaunchScreen.storyboard in Resources */,
+				FDD291691F2E1D44009CC565 /* OpenSans-LightItalic.ttf in Resources */,
+				FDD291481F2E18C2009CC565 /* Assets.xcassets in Resources */,
+				FDD291631F2E1D44009CC565 /* OpenSans-Bold.ttf in Resources */,
+				FDD291461F2E18C2009CC565 /* Main.storyboard in Resources */,
+				FDD2916C1F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				FDD291681F2E1D44009CC565 /* OpenSans-Light.ttf in Resources */,
+				FDD2916A1F2E1D44009CC565 /* OpenSans-Regular.ttf in Resources */,
+				FDD291661F2E1D44009CC565 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDD291391F2E18C2009CC565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDD291431F2E18C2009CC565 /* ViewController.swift in Sources */,
+				FDD291701F2E3656009CC565 /* EHStackViewSettingsViewController.swift in Sources */,
+				FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */,
+				FDD291731F2E4DED009CC565 /* UIStackView+Extensions.swift in Sources */,
+				FDD291531F2E19EE009CC565 /* EHColorableStackView.swift in Sources */,
+				FDD2916E1F2E2B69009CC565 /* UIColor+Extensions.swift in Sources */,
+				FDD291751F2E7060009CC565 /* EHStackViewSettingsModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FDD291441F2E18C2009CC565 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDD291451F2E18C2009CC565 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDD291491F2E18C2009CC565 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDD2914A1F2E18C2009CC565 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDD2914D1F2E18C2009CC565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDD2914E1F2E18C2009CC565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDD291501F2E18C2009CC565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 82A2S5FGTA;
+				INFOPLIST_FILE = LearnAboutStackViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.erichyche.LearnAboutStackViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FDD291511F2E18C2009CC565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 82A2S5FGTA;
+				INFOPLIST_FILE = LearnAboutStackViews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.erichyche.LearnAboutStackViews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDD291381F2E18C2009CC565 /* Build configuration list for PBXProject "LearnAboutStackViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDD2914D1F2E18C2009CC565 /* Debug */,
+				FDD2914E1F2E18C2009CC565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDD2914F1F2E18C2009CC565 /* Build configuration list for PBXNativeTarget "LearnAboutStackViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDD291501F2E18C2009CC565 /* Debug */,
+				FDD291511F2E18C2009CC565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDD291351F2E18C2009CC565 /* Project object */;
+}
