@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD07155D1F2FF3AD00F7CB7A /* EHSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07155C1F2FF3AD00F7CB7A /* EHSelectionViewController.swift */; };
+		FD07155F1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07155E1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift */; };
+		FD0715611F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */; };
+		FD0715631F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */; };
 		FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291401F2E18C2009CC565 /* AppDelegate.swift */; };
 		FDD291431F2E18C2009CC565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291421F2E18C2009CC565 /* ViewController.swift */; };
 		FDD291461F2E18C2009CC565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD291441F2E18C2009CC565 /* Main.storyboard */; };
@@ -26,11 +30,14 @@
 		FDD2916C1F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD291611F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf */; };
 		FDD2916E1F2E2B69009CC565 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD2916D1F2E2B69009CC565 /* UIColor+Extensions.swift */; };
 		FDD291701F2E3656009CC565 /* EHStackViewSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD2916F1F2E3656009CC565 /* EHStackViewSettingsViewController.swift */; };
-		FDD291731F2E4DED009CC565 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291721F2E4DED009CC565 /* UIStackView+Extensions.swift */; };
 		FDD291751F2E7060009CC565 /* EHStackViewSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD07155C1F2FF3AD00F7CB7A /* EHSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHSelectionViewController.swift; sourceTree = "<group>"; };
+		FD07155E1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutConstraintAxis+Extensions.swift"; sourceTree = "<group>"; };
+		FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackViewDistribution+Extensions.swift"; sourceTree = "<group>"; };
+		FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackViewAlignment+Extensions.swift"; sourceTree = "<group>"; };
 		FDD2913D1F2E18C2009CC565 /* LearnAboutStackViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnAboutStackViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD291401F2E18C2009CC565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD291421F2E18C2009CC565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +59,6 @@
 		FDD291611F2E1D44009CC565 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		FDD2916D1F2E2B69009CC565 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		FDD2916F1F2E3656009CC565 /* EHStackViewSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHStackViewSettingsViewController.swift; sourceTree = "<group>"; };
-		FDD291721F2E4DED009CC565 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHStackViewSettingsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +103,7 @@
 				FDD291521F2E19EE009CC565 /* EHColorableStackView.swift */,
 				FDD2916F1F2E3656009CC565 /* EHStackViewSettingsViewController.swift */,
 				FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */,
+				FD07155C1F2FF3AD00F7CB7A /* EHSelectionViewController.swift */,
 			);
 			path = LearnAboutStackViews;
 			sourceTree = "<group>";
@@ -139,7 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				FDD2916D1F2E2B69009CC565 /* UIColor+Extensions.swift */,
-				FDD291721F2E4DED009CC565 /* UIStackView+Extensions.swift */,
+				FD07155E1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift */,
+				FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */,
+				FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -231,9 +240,12 @@
 				FDD291431F2E18C2009CC565 /* ViewController.swift in Sources */,
 				FDD291701F2E3656009CC565 /* EHStackViewSettingsViewController.swift in Sources */,
 				FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */,
-				FDD291731F2E4DED009CC565 /* UIStackView+Extensions.swift in Sources */,
+				FD07155D1F2FF3AD00F7CB7A /* EHSelectionViewController.swift in Sources */,
+				FD0715631F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift in Sources */,
 				FDD291531F2E19EE009CC565 /* EHColorableStackView.swift in Sources */,
 				FDD2916E1F2E2B69009CC565 /* UIColor+Extensions.swift in Sources */,
+				FD0715611F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift in Sources */,
+				FD07155F1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift in Sources */,
 				FDD291751F2E7060009CC565 /* EHStackViewSettingsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +412,7 @@
 				FDD291511F2E18C2009CC565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
