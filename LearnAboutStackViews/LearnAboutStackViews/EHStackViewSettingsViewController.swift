@@ -39,13 +39,20 @@ class EHStackViewSettingsViewController: UIViewController {
     // MARK: - Internal properties
 
     enum RowContent: Int {
-        case header
+        case paramsHeader
         case axis
         case distribution
         case alignment
         case spacing
         case isBaselineRelativeArrangement
         case isLayoutMarginsRelativeArrangement
+        case layoutMarginsHeader
+        case layoutMarginsLeft
+        case layoutMarginsTop
+        case layoutMarginsRight
+        case layoutMarginsBottom
+        case pinningHeader
+        case pinningValue
     }
 
     private let initialSettings: EHStackViewSettingsModel
@@ -73,7 +80,7 @@ class EHStackViewSettingsViewController: UIViewController {
         displayStackView.distribution = .fill
         displayStackView.alignment = .fill
         displayStackView.isLayoutMarginsRelativeArrangement = true
-        displayStackView.layoutMargins = UIEdgeInsetsMake(0.0, 10.0, 0.0, 10.0)
+        displayStackView.layoutMargins = UIEdgeInsetsMake(20.0, 10.0, 20.0, 10.0)
         displayStackView.spacing = 8.0
 
         scrollView.addSubview(displayStackView)
@@ -96,23 +103,34 @@ class EHStackViewSettingsViewController: UIViewController {
             view.removeFromSuperview()
         }
 
-        displayStackView.addArrangedSubview(headerLabel(withText: "UIStackView parameters", content: .header))
+        displayStackView.addArrangedSubview(headerLabel(withText: "Parameters", content: .paramsHeader))
         displayStackView.addArrangedSubview(nameValueView(withName: "axis", andValue: currentSettings.axis.textDescription, content: .axis))
         displayStackView.addArrangedSubview(nameValueView(withName: "distribution", andValue: currentSettings.distribution.textDescription, content: .distribution))
         displayStackView.addArrangedSubview(nameValueView(withName: "alignment", andValue: currentSettings.alignment.textDescription, content: .alignment))
         displayStackView.addArrangedSubview(nameValueView(withName: "spacing", andValue: "\(currentSettings.spacing)", content: .spacing))
         displayStackView.addArrangedSubview(nameBooleanValueView(withName: "isBaselineRelativeArrangement", andValue: currentSettings.isBaselineRelativeArrangement, content: .isBaselineRelativeArrangement))
         displayStackView.addArrangedSubview(nameBooleanValueView(withName: "isLayoutMarginsRelativeArrangement", andValue: currentSettings.isLayoutMarginsRelativeArrangement, content: .isLayoutMarginsRelativeArrangement))
+        displayStackView.addArrangedSubview(headerLabel(withText: "layoutMargins", content: .layoutMarginsHeader))
+        displayStackView.addArrangedSubview(nameValueView(withName: "left", andValue: "\(currentSettings.layoutMargins.left)", content: .layoutMarginsLeft))
+        displayStackView.addArrangedSubview(nameValueView(withName: "top", andValue: "\(currentSettings.layoutMargins.top)", content: .layoutMarginsTop))
+        displayStackView.addArrangedSubview(nameValueView(withName: "right", andValue: "\(currentSettings.layoutMargins.right)", content: .layoutMarginsRight))
+        displayStackView.addArrangedSubview(nameValueView(withName: "bottom", andValue: "\(currentSettings.layoutMargins.bottom)", content: .layoutMarginsBottom))
+        displayStackView.addArrangedSubview(headerLabel(withText: "Pinning", content: .pinningHeader))
+        displayStackView.addArrangedSubview(nameValueView(withName: "Anchors", andValue: currentSettings.pinning.textDescription, content: .pinningValue))
     }
 
     private func updateViewState() {
-        updateRow(content: .header)
+        // Headers are not updated since they don't change
         updateRow(content: .axis)
         updateRow(content: .distribution)
         updateRow(content: .alignment)
         updateRow(content: .spacing)
         updateRow(content: .isBaselineRelativeArrangement)
         updateRow(content: .isLayoutMarginsRelativeArrangement)
+        updateRow(content: .layoutMarginsLeft)
+        updateRow(content: .layoutMarginsTop)
+        updateRow(content: .layoutMarginsRight)
+        updateRow(content: .layoutMarginsBottom)
     }
 
     private func updateRow(content: RowContent) {
@@ -126,7 +144,6 @@ class EHStackViewSettingsViewController: UIViewController {
                         rowValueLabel.text = currentSettings.axis.textDescription
                         rowValueLabel.textColor = textColor
                     }
-                    break
                 case .distribution:
                     if rowStackView.arrangedSubviews.count >= 2,
                         let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
@@ -134,7 +151,6 @@ class EHStackViewSettingsViewController: UIViewController {
                         rowValueLabel.text = currentSettings.distribution.textDescription
                         rowValueLabel.textColor = textColor
                     }
-                    break
                 case .alignment:
                     if rowStackView.arrangedSubviews.count >= 2,
                         let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
@@ -142,7 +158,6 @@ class EHStackViewSettingsViewController: UIViewController {
                         rowValueLabel.text = currentSettings.alignment.textDescription
                         rowValueLabel.textColor = textColor
                     }
-                    break
                 case .spacing:
                     if rowStackView.arrangedSubviews.count >= 2,
                         let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
@@ -150,17 +165,50 @@ class EHStackViewSettingsViewController: UIViewController {
                         rowValueLabel.text = "\(currentSettings.spacing)"
                         rowValueLabel.textColor = textColor
                     }
-                    break
                 case .isBaselineRelativeArrangement:
                     if rowStackView.arrangedSubviews.count >= 2,
                        let rowSwitch = rowStackView.arrangedSubviews[1] as? UISwitch {
                         rowSwitch.isOn = currentSettings.isBaselineRelativeArrangement
                     }
-                    break
                 case .isLayoutMarginsRelativeArrangement:
                     if rowStackView.arrangedSubviews.count >= 2,
                         let rowSwitch = rowStackView.arrangedSubviews[1] as? UISwitch {
                         rowSwitch.isOn = currentSettings.isLayoutMarginsRelativeArrangement
+                    }
+                case .layoutMarginsLeft:
+                    if rowStackView.arrangedSubviews.count >= 2,
+                       let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
+                            let textColor = (currentSettings.layoutMargins.left == initialSettings.layoutMargins.left ? UIColor.blue : UIColor.red)
+                            rowValueLabel.text = "\(currentSettings.layoutMargins.left)"
+                            rowValueLabel.textColor = textColor
+                    }
+                case .layoutMarginsTop:
+                    if rowStackView.arrangedSubviews.count >= 2,
+                       let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
+                        let textColor = (currentSettings.layoutMargins.top == initialSettings.layoutMargins.top ? UIColor.blue : UIColor.red)
+                        rowValueLabel.text = "\(currentSettings.layoutMargins.top)"
+                        rowValueLabel.textColor = textColor
+                    }
+                case .layoutMarginsRight:
+                    if rowStackView.arrangedSubviews.count >= 2,
+                       let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
+                        let textColor = (currentSettings.layoutMargins.right == initialSettings.layoutMargins.right ? UIColor.blue : UIColor.red)
+                        rowValueLabel.text = "\(currentSettings.layoutMargins.right)"
+                        rowValueLabel.textColor = textColor
+                    }
+                case .layoutMarginsBottom:
+                    if rowStackView.arrangedSubviews.count >= 2,
+                       let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
+                        let textColor = (currentSettings.layoutMargins.bottom == initialSettings.layoutMargins.bottom ? UIColor.blue : UIColor.red)
+                        rowValueLabel.text = "\(currentSettings.layoutMargins.bottom)"
+                        rowValueLabel.textColor = textColor
+                    }
+                case .pinningValue:
+                    if rowStackView.arrangedSubviews.count >= 2,
+                       let rowValueLabel = rowStackView.arrangedSubviews[1] as? UILabel {
+                        let textColor = (currentSettings.pinning == initialSettings.pinning ? UIColor.blue : UIColor.red)
+                        rowValueLabel.text = currentSettings.pinning.textDescription
+                        rowValueLabel.textColor = textColor
                     }
                     break
                 default:
@@ -256,7 +304,6 @@ class EHStackViewSettingsViewController: UIViewController {
                         self?.navigationController?.popViewController(animated: true)
                     }
                     navigationController?.pushViewController(axisController, animated: true)
-                    break
                 case .distribution:
                     let distController = EHMultipleChoiceViewController(withDataSource: currentSettings.distribution)
                     distController.updateBlock = { [weak self] (dataSource) in
@@ -267,7 +314,6 @@ class EHStackViewSettingsViewController: UIViewController {
                         self?.navigationController?.popViewController(animated: true)
                     }
                     navigationController?.pushViewController(distController, animated: true)
-                    break
                 case .alignment:
                     let alignController = EHMultipleChoiceViewController(withDataSource: currentSettings.alignment)
                     alignController.updateBlock = { [weak self] (dataSource) in
@@ -278,13 +324,72 @@ class EHStackViewSettingsViewController: UIViewController {
                         self?.navigationController?.popViewController(animated: true)
                     }
                     navigationController?.pushViewController(alignController, animated: true)
-                    break
                 case .spacing:
-                    break
+                    let spacingController = EHMultipleChoiceViewController(withDataSource: currentSettings.spacing)
+                    spacingController.updateBlock = { [weak self] (dataSource) in
+                        if let updatedSpacing = dataSource as? CGFloat {
+                            self?.currentSettings.spacing = updatedSpacing
+                        }
+                        self?.updateRow(content: rowEnum)
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                    navigationController?.pushViewController(spacingController, animated: true)
                 case .isLayoutMarginsRelativeArrangement:
-                    break
+                    currentSettings.isLayoutMarginsRelativeArrangement = !currentSettings.isLayoutMarginsRelativeArrangement
+                    updateRow(content: rowEnum)
                 case .isBaselineRelativeArrangement:
-                    break
+                    currentSettings.isBaselineRelativeArrangement = !currentSettings.isBaselineRelativeArrangement
+                    updateRow(content: rowEnum)
+                case .layoutMarginsLeft:
+                    let marginController = EHMultipleChoiceViewController(withDataSource: currentSettings.layoutMargins.left)
+                    marginController.updateBlock = { [weak self] (dataSource) in
+                        if let updatedMargin = dataSource as? CGFloat {
+                            self?.currentSettings.layoutMargins.left = updatedMargin
+                        }
+                        self?.updateRow(content: rowEnum)
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                    navigationController?.pushViewController(marginController, animated: true)
+                case .layoutMarginsTop:
+                    let marginController = EHMultipleChoiceViewController(withDataSource: currentSettings.layoutMargins.top)
+                    marginController.updateBlock = { [weak self] (dataSource) in
+                        if let updatedMargin = dataSource as? CGFloat {
+                            self?.currentSettings.layoutMargins.top = updatedMargin
+                        }
+                        self?.updateRow(content: rowEnum)
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                    navigationController?.pushViewController(marginController, animated: true)
+                case .layoutMarginsRight:
+                    let marginController = EHMultipleChoiceViewController(withDataSource: currentSettings.layoutMargins.right)
+                    marginController.updateBlock = { [weak self] (dataSource) in
+                        if let updatedMargin = dataSource as? CGFloat {
+                            self?.currentSettings.layoutMargins.right = updatedMargin
+                        }
+                        self?.updateRow(content: rowEnum)
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                    navigationController?.pushViewController(marginController, animated: true)
+                case .layoutMarginsBottom:
+                    let marginController = EHMultipleChoiceViewController(withDataSource: currentSettings.layoutMargins.bottom)
+                    marginController.updateBlock = { [weak self] (dataSource) in
+                        if let updatedMargin = dataSource as? CGFloat {
+                            self?.currentSettings.layoutMargins.bottom = updatedMargin
+                        }
+                        self?.updateRow(content: rowEnum)
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                    navigationController?.pushViewController(marginController, animated: true)
+                case .pinningValue:
+                    let pinningController = EHMultipleChoiceViewController(withDataSource: currentSettings.pinning)
+                    pinningController.updateBlock = { [weak self] (dataSource) in
+                        if let updatedPinning = dataSource as? EHPinningOptions {
+                            self?.currentSettings.pinning = updatedPinning
+                        }
+                        self?.updateRow(content: rowEnum)
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                    navigationController?.pushViewController(pinningController, animated: true)
                 default:
                     break
             }

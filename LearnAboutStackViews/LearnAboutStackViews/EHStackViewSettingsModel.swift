@@ -11,18 +11,6 @@ import UIKit
 typealias EHStackViewSettingsAnimationBlock = () -> Void
 typealias EHStackViewSettingsCompletionBlock = (_ finished: Bool) -> Void
 
-struct EHPinningOptions: OptionSet {
-    let rawValue: Int
-
-    static let none     = EHPinningOptions(rawValue: 0)
-    static let top      = EHPinningOptions(rawValue: 1 << 0)
-    static let centerY  = EHPinningOptions(rawValue: 1 << 1)
-    static let bottom   = EHPinningOptions(rawValue: 1 << 2)
-    static let leading  = EHPinningOptions(rawValue: 1 << 3)
-    static let centerX  = EHPinningOptions(rawValue: 1 << 4)
-    static let trailing = EHPinningOptions(rawValue: 1 << 5)
-}
-
 struct EHStackViewSettingsModel {
     var axis: UILayoutConstraintAxis
     var distribution: UIStackViewDistribution
@@ -114,8 +102,9 @@ extension EHStackViewSettingsModel {
     static func computePinning(forStackView stackView: UIStackView, inContainerView containerView: UIView) -> EHPinningOptions {
         // Get all the contraints on the stackView
         var pinning: EHPinningOptions = EHPinningOptions.none
-        let constraints = stackView.constraints
+        let constraints = containerView.constraints
         for constraint in constraints {
+            print("constraint=\(constraint)")
             // This has to be a constraint between two views
             if let firstView = constraint.firstItem as? UIView,
                let secondView = constraint.secondItem as? UIView {
@@ -129,8 +118,10 @@ extension EHStackViewSettingsModel {
                     stackViewAttribute = constraint.secondAttribute
                     containerViewAttribute = constraint.firstAttribute
                 }
-                let pinOption = pinningOption(stackViewAttribute: stackViewAttribute, containerViewAttribute: containerViewAttribute)
-                pinning.update(with: pinOption)
+                if stackViewAttribute != .notAnAttribute && containerViewAttribute != .notAnAttribute {
+                    let pinOption = pinningOption(stackViewAttribute: stackViewAttribute, containerViewAttribute: containerViewAttribute)
+                    pinning.insert(pinOption)
+                }
             }
         }
         return pinning

@@ -11,6 +11,9 @@
 		FD07155F1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD07155E1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift */; };
 		FD0715611F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */; };
 		FD0715631F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */; };
+		FD0715651F3027D400F7CB7A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715641F3027D400F7CB7A /* CGFloat+Extensions.swift */; };
+		FD96E4201F30DF810008DEE0 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96E41F1F30DF810008DEE0 /* Bool+Extensions.swift */; };
+		FD96E4221F30F3450008DEE0 /* EHPinningOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96E4211F30F3450008DEE0 /* EHPinningOptions.swift */; };
 		FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291401F2E18C2009CC565 /* AppDelegate.swift */; };
 		FDD291431F2E18C2009CC565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291421F2E18C2009CC565 /* ViewController.swift */; };
 		FDD291461F2E18C2009CC565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD291441F2E18C2009CC565 /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 		FD07155E1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutConstraintAxis+Extensions.swift"; sourceTree = "<group>"; };
 		FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackViewDistribution+Extensions.swift"; sourceTree = "<group>"; };
 		FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackViewAlignment+Extensions.swift"; sourceTree = "<group>"; };
+		FD0715641F3027D400F7CB7A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		FD96E41F1F30DF810008DEE0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
+		FD96E4211F30F3450008DEE0 /* EHPinningOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHPinningOptions.swift; sourceTree = "<group>"; };
 		FDD2913D1F2E18C2009CC565 /* LearnAboutStackViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnAboutStackViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD291401F2E18C2009CC565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD291421F2E18C2009CC565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 				FDD2916F1F2E3656009CC565 /* EHStackViewSettingsViewController.swift */,
 				FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */,
 				FD07155C1F2FF3AD00F7CB7A /* EHSelectionViewController.swift */,
+				FD96E4211F30F3450008DEE0 /* EHPinningOptions.swift */,
 			);
 			path = LearnAboutStackViews;
 			sourceTree = "<group>";
@@ -149,6 +156,8 @@
 				FD07155E1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift */,
 				FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */,
 				FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */,
+				FD0715641F3027D400F7CB7A /* CGFloat+Extensions.swift */,
+				FD96E41F1F30DF810008DEE0 /* Bool+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -237,7 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0715651F3027D400F7CB7A /* CGFloat+Extensions.swift in Sources */,
 				FDD291431F2E18C2009CC565 /* ViewController.swift in Sources */,
+				FD96E4221F30F3450008DEE0 /* EHPinningOptions.swift in Sources */,
 				FDD291701F2E3656009CC565 /* EHStackViewSettingsViewController.swift in Sources */,
 				FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */,
 				FD07155D1F2FF3AD00F7CB7A /* EHSelectionViewController.swift in Sources */,
@@ -247,6 +258,7 @@
 				FD0715611F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift in Sources */,
 				FD07155F1F300A6300F7CB7A /* UILayoutConstraintAxis+Extensions.swift in Sources */,
 				FDD291751F2E7060009CC565 /* EHStackViewSettingsModel.swift in Sources */,
+				FD96E4201F30DF810008DEE0 /* Bool+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
