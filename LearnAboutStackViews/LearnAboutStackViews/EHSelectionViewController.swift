@@ -44,7 +44,6 @@ class EHMultipleChoiceViewController: UIViewController {
         self.dataSource = dataSource
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = dataSource.title()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(updateButtonTapped(sender:)))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -138,6 +137,8 @@ class EHMultipleChoiceViewController: UIViewController {
                 dataSource.setChoice(selected: !isRowSelected, atIndex: rowTappedIndex)
                 // Now update the entire view state
                 updateViewState()
+                // Call the datasource updated block
+                updateBlock?(dataSource)
             } else {
                 // This is a single-select data source, so we only take action
                 // if the row is not selected.
@@ -145,13 +146,11 @@ class EHMultipleChoiceViewController: UIViewController {
                     dataSource.setChoice(selected: true, atIndex: rowTappedIndex)
                     // Now update the entire view state
                     updateViewState()
+                    // Call the datasource updated block
+                    updateBlock?(dataSource)
                 }
             }
         }
-    }
-
-    @objc func updateButtonTapped(sender: AnyObject) {
-        updateBlock?(dataSource)
     }
 
 }

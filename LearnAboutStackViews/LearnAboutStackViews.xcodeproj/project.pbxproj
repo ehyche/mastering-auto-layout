@@ -12,6 +12,7 @@
 		FD0715611F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */; };
 		FD0715631F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */; };
 		FD0715651F3027D400F7CB7A /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0715641F3027D400F7CB7A /* CGFloat+Extensions.swift */; };
+		FD2C0CFA1F35574A00C41E63 /* EHStackViewContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C0CF91F35574A00C41E63 /* EHStackViewContentViewController.swift */; };
 		FD96E4201F30DF810008DEE0 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96E41F1F30DF810008DEE0 /* Bool+Extensions.swift */; };
 		FD96E4221F30F3450008DEE0 /* EHPinningOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD96E4211F30F3450008DEE0 /* EHPinningOptions.swift */; };
 		FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD291401F2E18C2009CC565 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		FD0715601F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackViewDistribution+Extensions.swift"; sourceTree = "<group>"; };
 		FD0715621F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackViewAlignment+Extensions.swift"; sourceTree = "<group>"; };
 		FD0715641F3027D400F7CB7A /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		FD2C0CF91F35574A00C41E63 /* EHStackViewContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHStackViewContentViewController.swift; sourceTree = "<group>"; };
 		FD96E41F1F30DF810008DEE0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		FD96E4211F30F3450008DEE0 /* EHPinningOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHPinningOptions.swift; sourceTree = "<group>"; };
 		FDD2913D1F2E18C2009CC565 /* LearnAboutStackViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnAboutStackViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				FDD291741F2E7060009CC565 /* EHStackViewSettingsModel.swift */,
 				FD07155C1F2FF3AD00F7CB7A /* EHSelectionViewController.swift */,
 				FD96E4211F30F3450008DEE0 /* EHPinningOptions.swift */,
+				FD2C0CF91F35574A00C41E63 /* EHStackViewContentViewController.swift */,
 			);
 			path = LearnAboutStackViews;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				FDD291411F2E18C2009CC565 /* AppDelegate.swift in Sources */,
 				FD07155D1F2FF3AD00F7CB7A /* EHSelectionViewController.swift in Sources */,
 				FD0715631F3011F100F7CB7A /* UIStackViewAlignment+Extensions.swift in Sources */,
+				FD2C0CFA1F35574A00C41E63 /* EHStackViewContentViewController.swift in Sources */,
 				FDD291531F2E19EE009CC565 /* EHColorableStackView.swift in Sources */,
 				FDD2916E1F2E2B69009CC565 /* UIColor+Extensions.swift in Sources */,
 				FD0715611F300F4100F7CB7A /* UIStackViewDistribution+Extensions.swift in Sources */,

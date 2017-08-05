@@ -104,7 +104,6 @@ extension EHStackViewSettingsModel {
         var pinning: EHPinningOptions = EHPinningOptions.none
         let constraints = containerView.constraints
         for constraint in constraints {
-            print("constraint=\(constraint)")
             // This has to be a constraint between two views
             if let firstView = constraint.firstItem as? UIView,
                let secondView = constraint.secondItem as? UIView {

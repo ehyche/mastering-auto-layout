@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     private let bottomStackView = UIStackView(frame: .zero)
     private let containerLabel = UILabel(frame: .zero)
     private let stackLabel = UILabel(frame: .zero)
+    private let contentLabel = UILabel(frame: .zero)
     private let updateLabel = UILabel(frame: .zero)
     private let demonstrationStackView = EHColorableStackView(frame: .zero)
 
@@ -43,10 +44,12 @@ class ViewController: UIViewController {
         titleLabel.textColor = UIColor.black
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
+        titleLabel.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
 
         containerView.backgroundColor = UIColor.darkGray
         containerView.layer.borderColor = UIColor.black.cgColor
         containerView.layer.borderWidth = 2.0
+        containerView.setContentHuggingPriority(UILayoutPriorityDefaultLow, for: .vertical)
 
         demonstrationStackView.translatesAutoresizingMaskIntoConstraints = false
         demonstrationStackView.backgroundColor = UIColor.lightGray
@@ -58,14 +61,16 @@ class ViewController: UIViewController {
         demonstrationStackView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         demonstrationStackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
 
-        demonstrationStackView.addArrangedSubview(UIImageView(image: UIImage(named: "steve-large")))
-        demonstrationStackView.addArrangedSubview(UIImageView(image: UIImage(named: "tim-medium")))
-        demonstrationStackView.addArrangedSubview(UIImageView(image: UIImage(named: "gil-small")))
+        let defaultViews = EHStackViewContentViewController.defaultArrangedSubviews()
+        for defaultView in defaultViews {
+            demonstrationStackView.addArrangedSubview(defaultView)
+        }
 
         bottomStackView.axis = .horizontal
         bottomStackView.distribution = .fill
-        bottomStackView.alignment = .firstBaseline
+        bottomStackView.alignment = .fill
         bottomStackView.spacing = 20.0
+        bottomStackView.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
 
         containerLabel.text = "Container View"
         containerLabel.textColor = containerView.backgroundColor
@@ -76,21 +81,51 @@ class ViewController: UIViewController {
         stackLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
         stackLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow-1, for: .horizontal)
 
+        contentLabel.text = "Content"
+        contentLabel.textColor = UIColor.brown
+        contentLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
+        contentLabel.isUserInteractionEnabled = true
+        let tapRecognizerContent = UITapGestureRecognizer(target: self, action: #selector(contentLabelTapped(recognizer:)))
+        contentLabel.addGestureRecognizer(tapRecognizerContent)
+
         updateLabel.text = "Update"
         updateLabel.textColor = UIColor.blue
         updateLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
-
         updateLabel.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(updateLabelTapped(recognizer:)))
-        updateLabel.addGestureRecognizer(tapRecognizer)
+        let tapRecognizerUpdate = UITapGestureRecognizer(target: self, action: #selector(updateLabelTapped(recognizer:)))
+        updateLabel.addGestureRecognizer(tapRecognizerUpdate)
 
         bottomStackView.addArrangedSubview(containerLabel)
         bottomStackView.addArrangedSubview(stackLabel)
+        bottomStackView.addArrangedSubview(contentLabel)
         bottomStackView.addArrangedSubview(updateLabel)
 
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(containerView)
         stackView.addArrangedSubview(bottomStackView)
+    }
+
+    @objc func contentLabelTapped(recognizer: UIGestureRecognizer) {
+        let contentController = EHStackViewContentViewController(arrangedSubviews: demonstrationStackView.arrangedSubviews)
+        let navigationController = UINavigationController(rootViewController: contentController)
+
+        contentController.cancelBlock = { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
+
+        contentController.updateBlock = { [weak self] (updatedSubviews) in
+            guard let strongSelf = self else {
+                return
+            }
+            EHStackViewContentViewController.update(arrangedSubviews: updatedSubviews, inStackView: strongSelf.demonstrationStackView, animated: true, duration: 0.3)
+            strongSelf.dismiss(animated: true, completion: nil)
+        }
+
+        navigationController.modalPresentationStyle = .popover
+        navigationController.preferredContentSize = CGSize(width: 375.0, height: 320.0)
+        navigationController.popoverPresentationController?.sourceView = contentLabel
+
+        present(navigationController, animated: true, completion: nil)
     }
 
     @objc func updateLabelTapped(recognizer: UIGestureRecognizer) {
@@ -106,8 +141,8 @@ class ViewController: UIViewController {
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.dismiss(animated: true, completion: nil)
             EHStackViewSettingsModel.apply(settings: settings, toStackView: strongSelf.demonstrationStackView, inContainerView: strongSelf.containerView, animated: true, duration: 0.3, completion: nil)
+            strongSelf.dismiss(animated: true, completion: nil)
         }
 
         navigationController.modalPresentationStyle = .popover

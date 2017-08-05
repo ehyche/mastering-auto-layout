@@ -387,7 +387,6 @@ class EHStackViewSettingsViewController: UIViewController {
                             self?.currentSettings.pinning = updatedPinning
                         }
                         self?.updateRow(content: rowEnum)
-                        self?.navigationController?.popViewController(animated: true)
                     }
                     navigationController?.pushViewController(pinningController, animated: true)
                 default:
