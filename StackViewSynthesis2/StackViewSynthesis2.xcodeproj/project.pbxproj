@@ -12,7 +12,6 @@
 		FD67181C1F33FE49001244A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD67181A1F33FE49001244A4 /* Main.storyboard */; };
 		FD67181E1F33FE49001244A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD67181D1F33FE49001244A4 /* Assets.xcassets */; };
 		FD6718211F33FE49001244A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD67181F1F33FE49001244A4 /* LaunchScreen.storyboard */; };
-		FD6718291F3402B1001244A4 /* vacation_spots.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD6718281F3402B1001244A4 /* vacation_spots.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		FD67181D1F33FE49001244A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD6718201F33FE49001244A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD6718221F33FE49001244A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD6718281F3402B1001244A4 /* vacation_spots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = vacation_spots.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +54,6 @@
 		FD6718151F33FE49001244A4 /* StackViewSynthesis2 */ = {
 			isa = PBXGroup;
 			children = (
-				FD6718281F3402B1001244A4 /* vacation_spots.plist */,
 				FD6718161F33FE49001244A4 /* AppDelegate.swift */,
 				FD6718181F33FE49001244A4 /* ViewController.swift */,
 				FD67181A1F33FE49001244A4 /* Main.storyboard */,
@@ -130,7 +127,6 @@
 				FD6718211F33FE49001244A4 /* LaunchScreen.storyboard in Resources */,
 				FD67181E1F33FE49001244A4 /* Assets.xcassets in Resources */,
 				FD67181C1F33FE49001244A4 /* Main.storyboard in Resources */,
-				FD6718291F3402B1001244A4 /* vacation_spots.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +304,7 @@
 				FD6718271F33FE49001244A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

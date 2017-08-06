@@ -2,6 +2,9 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='Introducing Constraints'/>
-        <page name='Untitled Page 2'/>
+        <page name='Ambiguous Layouts'/>
+        <page name='Unsatisfiable Layouts'/>
+        <page name='Constraint Inequalities'/>
+        <page name='Hugging and Compression'/>
     </pages>
 </playground>
