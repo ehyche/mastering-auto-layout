@@ -15,11 +15,12 @@ class ViewController: UIViewController {
     private let titleLabel = UILabel(frame: .zero)
     private let containerView = UIView(frame: .zero)
     private let bottomStackView = UIStackView(frame: .zero)
-    private let containerLabel = UILabel(frame: .zero)
-    private let stackLabel = UILabel(frame: .zero)
-    private let contentLabel = UILabel(frame: .zero)
-    private let updateLabel = UILabel(frame: .zero)
+    private let contentButton = UIButton(frame: .zero)
+    private let parametersButton = UIButton(frame: .zero)
+    private let animatedLabel = UILabel(frame: .zero)
+    private let animatedSwitch = UISwitch(frame: .zero)
     private let demonstrationStackView = EHColorableStackView(frame: .zero)
+    private var animated = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,44 +69,41 @@ class ViewController: UIViewController {
 
         bottomStackView.axis = .horizontal
         bottomStackView.distribution = .fill
-        bottomStackView.alignment = .fill
+        bottomStackView.alignment = .center
         bottomStackView.spacing = 20.0
         bottomStackView.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
 
-        containerLabel.text = "Container View"
-        containerLabel.textColor = containerView.backgroundColor
-        containerLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
+        contentButton.setTitle("Content", for: .normal)
+        contentButton.setTitleColor(UIColor.darkGray, for: .normal)
+        contentButton.titleLabel?.font = UIFont(name: "OpenSans-Bold", size: 24.0)
+        contentButton.addTarget(self, action: #selector(contentButtonTapped(sender:)), for: .touchUpInside)
 
-        stackLabel.text = "Stack View"
-        stackLabel.textColor = demonstrationStackView.backgroundColor
-        stackLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
-        stackLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow-1, for: .horizontal)
+        parametersButton.setTitle("Parameters", for: .normal)
+        parametersButton.setTitleColor(UIColor.darkGray, for: .normal)
+        parametersButton.titleLabel?.font = UIFont(name: "OpenSans-Bold", size: 24.0)
+        parametersButton.setContentHuggingPriority(UILayoutPriorityDefaultLow-1, for: .horizontal)
+        parametersButton.addTarget(self, action: #selector(parametersButtonTapped(sender:)), for: .touchUpInside)
 
-        contentLabel.text = "Content"
-        contentLabel.textColor = UIColor.brown
-        contentLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
-        contentLabel.isUserInteractionEnabled = true
-        let tapRecognizerContent = UITapGestureRecognizer(target: self, action: #selector(contentLabelTapped(recognizer:)))
-        contentLabel.addGestureRecognizer(tapRecognizerContent)
+        animatedLabel.text = "Animated"
+        animatedLabel.textColor = UIColor.darkGray
+        animatedLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
+        animatedLabel.isUserInteractionEnabled = true
+        animatedLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animatedLabelTapped(recognizer:))))
 
-        updateLabel.text = "Update"
-        updateLabel.textColor = UIColor.blue
-        updateLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
-        updateLabel.isUserInteractionEnabled = true
-        let tapRecognizerUpdate = UITapGestureRecognizer(target: self, action: #selector(updateLabelTapped(recognizer:)))
-        updateLabel.addGestureRecognizer(tapRecognizerUpdate)
+        animatedSwitch.isOn = animated
+        animatedSwitch.addTarget(self, action: #selector(animatedSwitchValueChanged(sender:)), for: .valueChanged)
 
-        bottomStackView.addArrangedSubview(containerLabel)
-        bottomStackView.addArrangedSubview(stackLabel)
-        bottomStackView.addArrangedSubview(contentLabel)
-        bottomStackView.addArrangedSubview(updateLabel)
+        bottomStackView.addArrangedSubview(contentButton)
+        bottomStackView.addArrangedSubview(parametersButton)
+        bottomStackView.addArrangedSubview(animatedLabel)
+        bottomStackView.addArrangedSubview(animatedSwitch)
 
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(containerView)
         stackView.addArrangedSubview(bottomStackView)
     }
 
-    @objc func contentLabelTapped(recognizer: UIGestureRecognizer) {
+    @objc private func contentButtonTapped(sender: UIButton) {
         let contentController = EHStackViewContentViewController(arrangedSubviews: demonstrationStackView.arrangedSubviews)
         let navigationController = UINavigationController(rootViewController: contentController)
 
@@ -117,18 +115,20 @@ class ViewController: UIViewController {
             guard let strongSelf = self else {
                 return
             }
-            EHStackViewContentViewController.update(arrangedSubviews: updatedSubviews, inStackView: strongSelf.demonstrationStackView, animated: true, duration: 0.3)
+            EHStackViewContentViewController.update(arrangedSubviews: updatedSubviews, inStackView: strongSelf.demonstrationStackView, animated: strongSelf.animated, duration: 0.3)
             strongSelf.dismiss(animated: true, completion: nil)
         }
 
         navigationController.modalPresentationStyle = .popover
         navigationController.preferredContentSize = CGSize(width: 375.0, height: 320.0)
-        navigationController.popoverPresentationController?.sourceView = contentLabel
+        navigationController.popoverPresentationController?.sourceView = contentButton
+        let sourceRect = CGRect(x: contentButton.frame.size.width / 2.0, y: 0.0, width: 1.0, height: 1.0)
+        navigationController.popoverPresentationController?.sourceRect = sourceRect
 
         present(navigationController, animated: true, completion: nil)
     }
 
-    @objc func updateLabelTapped(recognizer: UIGestureRecognizer) {
+    @objc private func parametersButtonTapped(sender: UIButton) {
         let stackViewSettings = EHStackViewSettingsModel.settingsModel(fromStackView: demonstrationStackView, inContainerView: containerView)
         let stackViewSettingsController = EHStackViewSettingsViewController(stackViewSettings: stackViewSettings)
         let navigationController = UINavigationController(rootViewController: stackViewSettingsController)
@@ -141,16 +141,27 @@ class ViewController: UIViewController {
             guard let strongSelf = self else {
                 return
             }
-            EHStackViewSettingsModel.apply(settings: settings, toStackView: strongSelf.demonstrationStackView, inContainerView: strongSelf.containerView, animated: true, duration: 0.3, completion: nil)
+            EHStackViewSettingsModel.apply(settings: settings, toStackView: strongSelf.demonstrationStackView, inContainerView: strongSelf.containerView, animated: strongSelf.animated, duration: 0.3, completion: nil)
             strongSelf.dismiss(animated: true, completion: nil)
         }
 
         navigationController.modalPresentationStyle = .popover
         navigationController.preferredContentSize = CGSize(width: 375.0, height: 320.0)
-        navigationController.popoverPresentationController?.sourceView = updateLabel
+        navigationController.popoverPresentationController?.sourceView = parametersButton
+        let sourceRect = CGRect(x: parametersButton.frame.size.width / 2.0, y: 0.0, width: 1.0, height: 1.0)
+        navigationController.popoverPresentationController?.sourceRect = sourceRect
 
         
         present(navigationController, animated: true, completion: nil)
+    }
+
+    @objc private func animatedSwitchValueChanged(sender: UISwitch) {
+        animated = sender.isOn
+    }
+
+    @objc private func animatedLabelTapped(recognizer: UIGestureRecognizer) {
+        animated = !animated
+        animatedSwitch.setOn(animated, animated: true)
     }
 
 }

@@ -52,6 +52,9 @@ class EHStackViewContentViewController: UIViewController {
     private var arrangedSubviews: [UIView]
     private let scrollView = UIScrollView(frame: .zero)
     private let stackView = UIStackView(frame: .zero)
+    private static let bgColorSmall = UIColor.brown
+    private static let bgColorMedium = UIColor.purple
+    private static let bgColorLarge = UIColor.magenta
 
     private enum RowContent: Int {
         case arrangedSubviewsHeader
@@ -262,9 +265,10 @@ class EHStackViewContentViewController: UIViewController {
         var view: UIView? = nil
 
         switch row {
-            case .addContentLabelSmall: break
-            case .addContentLabelMedium: break
-            case .addContentLabelLarge: break
+            case .addContentLabelSmall: fallthrough
+            case .addContentLabelMedium: fallthrough
+            case .addContentLabelLarge:
+                view = EHStackViewContentViewController.labelView(forRowContent: row)
             case .addContentImageSteveSmall:
                 view = EHStackViewContentViewController.imageView(withImageContent: .steveSmall)
             case .addContentImageSteveMedium:
@@ -306,6 +310,31 @@ class EHStackViewContentViewController: UIViewController {
         let imageView = UIImageView(image: UIImage(named: imageName))
         imageView.tag = content.rawValue
         return imageView
+    }
+
+    class private func labelView(forRowContent content: RowContent) -> UILabel {
+        let label = UILabel(frame: .zero)
+
+        label.textColor = UIColor.white
+
+        switch content {
+            case .addContentLabelSmall:
+                label.backgroundColor = EHStackViewContentViewController.bgColorSmall
+                label.font = UIFont(name: "OpenSans-Semibold", size: 32.0)
+                label.text = "111"
+            case .addContentLabelMedium:
+                label.backgroundColor = EHStackViewContentViewController.bgColorMedium
+                label.font = UIFont(name: "OpenSans-Semibold", size: 48.0)
+                label.text = "2222"
+            case .addContentLabelLarge:
+                label.backgroundColor = EHStackViewContentViewController.bgColorLarge
+                label.font = UIFont(name: "OpenSans-Semibold", size: 64.0)
+                label.text = "33333"
+            default:
+                break
+        }
+
+        return label
     }
 
     private func headerView(withText text: String, content: RowContent) -> UIStackView {
