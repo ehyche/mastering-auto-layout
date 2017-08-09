@@ -2,6 +2,14 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='Introducing Constraints'/>
+        <page name='Equal Width Views'/>
+        <page name='Proportional Width Views'/>
+        <page name='Proportional Width with Optional'/>
+        <page name='Fixed Height Columns'/>
+        <page name='Dynamic Height Columns'/>
+        <page name='Two Equal-Width Buttons'/>
+        <page name='Two Buttons With Equal Spacing'/>
+        <page name='Constraint Debug Descriptions'/>
         <page name='Ambiguous Layouts'/>
         <page name='Unsatisfiable Layouts'/>
         <page name='Constraint Inequalities'/>

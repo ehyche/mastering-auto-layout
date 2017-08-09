@@ -54,6 +54,17 @@ liveView.containerView.addConstraint(label0leading)
 liveView.containerView.addConstraint(label1trailing)
 liveView.containerView.addConstraint(label0label1gap)
 
+for constraint in liveView.containerView.constraints {
+    print("\(constraint)")
+}
+
+for constraint in label0.constraints {
+    print("\(constraint)")
+}
+
+for constraint in label1.constraints {
+    print("\(constraint)")
+}
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.liveView = liveView
