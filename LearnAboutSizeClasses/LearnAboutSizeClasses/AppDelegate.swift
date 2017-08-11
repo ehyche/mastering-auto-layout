@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  DebuggingAutoLayout
+//  LearnAboutSizeClasses
 //
-//  Created by Eric Hyche on 8/8/17.
+//  Created by Eric Hyche on 8/10/17.
 //  Copyright © 2017 HeirPlay Software. All rights reserved.
 //
 
@@ -15,18 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        let appWindow = UIWindow(frame: UIScreen.main.bounds)
-        appWindow.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
-
-        let controller = MasterViewController(nibName: nil, bundle: nil)
-        let navController = UINavigationController(rootViewController: controller)
-
-        appWindow.rootViewController = navController
-        appWindow.makeKeyAndVisible()
-
-        window = appWindow
-
+        // Override point for customization after application launch.
         return true
     }
 
@@ -50,13 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-    func showDebuggingInformationOverlay() {
-        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
-        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
-        let overlay = overlayClass?.perform(NSSelectorFromString("overlay")).takeUnretainedValue() as? UIWindow
-        _ = overlay?.perform(NSSelectorFromString("toggleVisibility"))
     }
 
 

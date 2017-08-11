@@ -13,6 +13,8 @@ class MasterViewController: UITableViewController {
     enum RowContent: Int {
         case unsatisfiableLayouts
         case ambiguousLayouts
+        case debuggingInformationOverlay
+        case autosizingMaskError
     }
 
     let cellID = "CellID"
@@ -36,7 +38,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,8 +47,10 @@ class MasterViewController: UITableViewController {
         if let rowContent = RowContent(rawValue: indexPath.row) {
             var title = ""
             switch rowContent {
-                case .unsatisfiableLayouts: title = "Unsatisfiable Layouts"
-                case .ambiguousLayouts:     title = "Ambiguous Layouts"
+                case .unsatisfiableLayouts:        title = "Unsatisfiable Layouts"
+                case .ambiguousLayouts:            title = "Ambiguous Layouts"
+                case .debuggingInformationOverlay: title = "Debugging Information Overlay"
+                case .autosizingMaskError:         title = "Autoresizing Mask Errors"
             }
             cell.textLabel?.text = title
             cell.accessoryType = .disclosureIndicator
@@ -65,9 +69,14 @@ class MasterViewController: UITableViewController {
             switch rowContent {
                 case .unsatisfiableLayouts:
                     viewController = EHUnsatisfiableViewController(nibName: nil, bundle: nil)
-                    break
                 case .ambiguousLayouts:
-                    break
+                    viewController = EHAmbiguousViewController(nibName: nil, bundle: nil)
+                case .debuggingInformationOverlay:
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                        appDelegate.showDebuggingInformationOverlay()
+                    }
+                case .autosizingMaskError:
+                    viewController = EHAutosizingMaskErrorViewController(nibName: nil, bundle: nil)
             }
             if let viewController = viewController {
                 navigationController?.pushViewController(viewController, animated: true)

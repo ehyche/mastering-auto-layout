@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FD9A93BE1F3A903900BAD905"
-               BuildableName = "DebuggingAutoLayout.app"
-               BlueprintName = "DebuggingAutoLayout"
-               ReferencedContainer = "container:DebuggingAutoLayout.xcodeproj">
+               BlueprintIdentifier = "FD8DC7F01F3D3837008DFA18"
+               BuildableName = "LearnAboutSizeClasses.app"
+               BlueprintName = "LearnAboutSizeClasses"
+               ReferencedContainer = "container:LearnAboutSizeClasses.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FD9A93BE1F3A903900BAD905"
-            BuildableName = "DebuggingAutoLayout.app"
-            BlueprintName = "DebuggingAutoLayout"
-            ReferencedContainer = "container:DebuggingAutoLayout.xcodeproj">
+            BlueprintIdentifier = "FD8DC7F01F3D3837008DFA18"
+            BuildableName = "LearnAboutSizeClasses.app"
+            BlueprintName = "LearnAboutSizeClasses"
+            ReferencedContainer = "container:LearnAboutSizeClasses.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,30 +55,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FD9A93BE1F3A903900BAD905"
-            BuildableName = "DebuggingAutoLayout.app"
-            BlueprintName = "DebuggingAutoLayout"
-            ReferencedContainer = "container:DebuggingAutoLayout.xcodeproj">
+            BlueprintIdentifier = "FD8DC7F01F3D3837008DFA18"
+            BuildableName = "LearnAboutSizeClasses.app"
+            BlueprintName = "LearnAboutSizeClasses"
+            ReferencedContainer = "container:LearnAboutSizeClasses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-UIViewShowAlignmentRects YES"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-_UIConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints YES"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-_UIConstraintBasedLayoutPlaySoundOnUnsatisfiable YES"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-_UIConstraintBasedLayoutPlaySoundWhenEngaged YES"
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -92,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FD9A93BE1F3A903900BAD905"
-            BuildableName = "DebuggingAutoLayout.app"
-            BlueprintName = "DebuggingAutoLayout"
-            ReferencedContainer = "container:DebuggingAutoLayout.xcodeproj">
+            BlueprintIdentifier = "FD8DC7F01F3D3837008DFA18"
+            BuildableName = "LearnAboutSizeClasses.app"
+            BlueprintName = "LearnAboutSizeClasses"
+            ReferencedContainer = "container:LearnAboutSizeClasses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

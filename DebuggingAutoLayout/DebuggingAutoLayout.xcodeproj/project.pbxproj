@@ -15,6 +15,8 @@
 		FD9A93D81F3A921B00BAD905 /* EHAdjustableContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9A93D61F3A921B00BAD905 /* EHAdjustableContainerView.swift */; };
 		FD9A93D91F3A921B00BAD905 /* EHContainerSizeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9A93D71F3A921B00BAD905 /* EHContainerSizeInfoView.swift */; };
 		FDB304DC1F3A9D250094181F /* EHUnsatisfiableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB304DB1F3A9D250094181F /* EHUnsatisfiableViewController.swift */; };
+		FDE8CA011F3BE78F006D6552 /* EHAmbiguousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE8CA001F3BE78F006D6552 /* EHAmbiguousViewController.swift */; };
+		FDE8CA031F3C04DC006D6552 /* EHAutosizingMaskErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE8CA021F3C04DC006D6552 /* EHAutosizingMaskErrorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FD9A93D61F3A921B00BAD905 /* EHAdjustableContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHAdjustableContainerView.swift; sourceTree = "<group>"; };
 		FD9A93D71F3A921B00BAD905 /* EHContainerSizeInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHContainerSizeInfoView.swift; sourceTree = "<group>"; };
 		FDB304DB1F3A9D250094181F /* EHUnsatisfiableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHUnsatisfiableViewController.swift; sourceTree = "<group>"; };
+		FDE8CA001F3BE78F006D6552 /* EHAmbiguousViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHAmbiguousViewController.swift; sourceTree = "<group>"; };
+		FDE8CA021F3C04DC006D6552 /* EHAutosizingMaskErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EHAutosizingMaskErrorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				FD9A93CD1F3A903900BAD905 /* LaunchScreen.storyboard */,
 				FD9A93D01F3A903900BAD905 /* Info.plist */,
 				FDB304DB1F3A9D250094181F /* EHUnsatisfiableViewController.swift */,
+				FDE8CA001F3BE78F006D6552 /* EHAmbiguousViewController.swift */,
+				FDE8CA021F3C04DC006D6552 /* EHAutosizingMaskErrorViewController.swift */,
 			);
 			path = DebuggingAutoLayout;
 			sourceTree = "<group>";
@@ -148,8 +154,10 @@
 				FD9A93D91F3A921B00BAD905 /* EHContainerSizeInfoView.swift in Sources */,
 				FD9A93D81F3A921B00BAD905 /* EHAdjustableContainerView.swift in Sources */,
 				FD9A93C71F3A903900BAD905 /* DetailViewController.swift in Sources */,
+				FDE8CA031F3C04DC006D6552 /* EHAutosizingMaskErrorViewController.swift in Sources */,
 				FD9A93C51F3A903900BAD905 /* MasterViewController.swift in Sources */,
 				FDB304DC1F3A9D250094181F /* EHUnsatisfiableViewController.swift in Sources */,
+				FDE8CA011F3BE78F006D6552 /* EHAmbiguousViewController.swift in Sources */,
 				FD9A93C31F3A903900BAD905 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
