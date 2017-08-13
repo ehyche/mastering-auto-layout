@@ -26,7 +26,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     override init() {
         super.init()
         // Create the data model.
-        pageData = ["France", "Italy"]
+        pageData = ["France", "Germany", "United Arab Emirates", "Norway"]
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {

@@ -31,8 +31,12 @@ class DataViewController: UIViewController {
         switch country {
             case "France":
                 configureFlagFrance()
-            case "Italy":
-                configureFlagItaly()
+            case "Germany":
+                configureFlagGermany()
+            case "United Arab Emirates":
+                configureFlagUAE()
+            case "Norway":
+                configureFlagNorway()
             default:
                 break
         }
@@ -42,7 +46,15 @@ class DataViewController: UIViewController {
         // Your code here
     }
 
-    func configureFlagItaly() {
+    func configureFlagGermany() {
+        // Your code here
+    }
+
+    func configureFlagUAE() {
+        // Your code here
+    }
+
+    func configureFlagNorway() {
         // Your code here
     }
 
