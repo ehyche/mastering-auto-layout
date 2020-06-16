@@ -48,6 +48,8 @@ class EHMultipleContentViewController: UIViewController {
 
         // Now let's lay out the images left-to-right
         let views = ["gil": imageViewGil, "steve": imageViewSteve, "tim": imageViewTim]
+        // These constraints are between the scroll view and a subview of the scroll view.
+        // So they are referring to the scrollView's content, not the scrollView itself.
         let horzConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[gil]-[steve]-[tim]-|",
                                                              options: .alignAllTop,
                                                              metrics: nil,
@@ -55,6 +57,8 @@ class EHMultipleContentViewController: UIViewController {
         NSLayoutConstraint.activate(horzConstraints)
 
         // Now we just need to align the first image vertically.
+        // These constraints are between the scroll view and a subview of the scroll view.
+        // So they are referring to the scrollView's content, not the scrollView itself.
         let vertConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-[gil]-|",
                                                              options: NSLayoutFormatOptions(rawValue: 0),
                                                              metrics: nil,
