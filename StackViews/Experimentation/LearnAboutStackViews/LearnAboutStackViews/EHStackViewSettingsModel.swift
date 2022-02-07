@@ -12,9 +12,9 @@ typealias EHStackViewSettingsAnimationBlock = () -> Void
 typealias EHStackViewSettingsCompletionBlock = (_ finished: Bool) -> Void
 
 struct EHStackViewSettingsModel {
-    var axis: UILayoutConstraintAxis
-    var distribution: UIStackViewDistribution
-    var alignment: UIStackViewAlignment
+    var axis: NSLayoutConstraint.Axis
+    var distribution: UIStackView.Distribution
+    var alignment: UIStackView.Alignment
     var spacing: CGFloat
     var isBaselineRelativeArrangement: Bool
     var isLayoutMarginsRelativeArrangement: Bool
@@ -108,8 +108,8 @@ extension EHStackViewSettingsModel {
             if let firstView = constraint.firstItem as? UIView,
                let secondView = constraint.secondItem as? UIView {
                 // Sort out which is the stack view and which is the container view
-                var stackViewAttribute: NSLayoutAttribute = .notAnAttribute
-                var containerViewAttribute: NSLayoutAttribute = .notAnAttribute
+                var stackViewAttribute: NSLayoutConstraint.Attribute = .notAnAttribute
+                var containerViewAttribute: NSLayoutConstraint.Attribute = .notAnAttribute
                 if firstView == stackView && secondView == containerView {
                     stackViewAttribute = constraint.firstAttribute
                     containerViewAttribute = constraint.secondAttribute
@@ -127,7 +127,7 @@ extension EHStackViewSettingsModel {
     }
 
 
-    static func pinningOption(stackViewAttribute: NSLayoutAttribute, containerViewAttribute: NSLayoutAttribute) -> EHPinningOptions {
+    static func pinningOption(stackViewAttribute: NSLayoutConstraint.Attribute, containerViewAttribute: NSLayoutConstraint.Attribute) -> EHPinningOptions {
         var option: EHPinningOptions = EHPinningOptions.none
 
         switch (stackViewAttribute,containerViewAttribute) {

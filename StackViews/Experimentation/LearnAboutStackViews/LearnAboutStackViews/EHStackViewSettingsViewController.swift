@@ -70,17 +70,17 @@ class EHStackViewSettingsViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
 
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
         displayStackView.translatesAutoresizingMaskIntoConstraints = false
         displayStackView.axis = .vertical
         displayStackView.distribution = .fill
         displayStackView.alignment = .fill
         displayStackView.isLayoutMarginsRelativeArrangement = true
-        displayStackView.layoutMargins = UIEdgeInsetsMake(20.0, 10.0, 20.0, 10.0)
+        displayStackView.layoutMargins = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
         displayStackView.spacing = 8.0
 
         scrollView.addSubview(displayStackView)
@@ -241,7 +241,7 @@ class EHStackViewSettingsViewController: UIViewController {
         nameLabel.text = name
         nameLabel.textColor = UIColor.black
         nameLabel.font = UIFont(name: "OpenSans-Semibold", size: 14.0)
-        nameLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow-1, for: .horizontal)
+        nameLabel.setContentHuggingPriority(UILayoutPriority.defaultLow-1, for: .horizontal)
         nameLabel.isUserInteractionEnabled = true
 
         let valueLabel = UILabel(frame: .zero)
@@ -275,7 +275,7 @@ class EHStackViewSettingsViewController: UIViewController {
         nameLabel.text = name
         nameLabel.textColor = UIColor.black
         nameLabel.font = UIFont(name: "OpenSans-Semibold", size: 14.0)
-        nameLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow-1, for: .horizontal)
+        nameLabel.setContentHuggingPriority(UILayoutPriority.defaultLow-1, for: .horizontal)
 
         let valueSwitch = UISwitch(frame: .zero)
         valueSwitch.isOn = value
@@ -297,7 +297,7 @@ class EHStackViewSettingsViewController: UIViewController {
                 case .axis:
                     let axisController = EHMultipleChoiceViewController(withDataSource: currentSettings.axis)
                     axisController.updateBlock = { [weak self] (dataSource) in
-                        if let updatedEnum = dataSource as? UILayoutConstraintAxis {
+                        if let updatedEnum = dataSource as? NSLayoutConstraint.Axis {
                             self?.currentSettings.axis = updatedEnum
                         }
                         self?.updateRow(content: rowEnum)
@@ -307,7 +307,7 @@ class EHStackViewSettingsViewController: UIViewController {
                 case .distribution:
                     let distController = EHMultipleChoiceViewController(withDataSource: currentSettings.distribution)
                     distController.updateBlock = { [weak self] (dataSource) in
-                        if let updatedEnum = dataSource as? UIStackViewDistribution {
+                        if let updatedEnum = dataSource as? UIStackView.Distribution {
                             self?.currentSettings.distribution = updatedEnum
                         }
                         self?.updateRow(content: rowEnum)
@@ -317,7 +317,7 @@ class EHStackViewSettingsViewController: UIViewController {
                 case .alignment:
                     let alignController = EHMultipleChoiceViewController(withDataSource: currentSettings.alignment)
                     alignController.updateBlock = { [weak self] (dataSource) in
-                        if let updatedEnum = dataSource as? UIStackViewAlignment {
+                        if let updatedEnum = dataSource as? UIStackView.Alignment {
                             self?.currentSettings.alignment = updatedEnum
                         }
                         self?.updateRow(content: rowEnum)

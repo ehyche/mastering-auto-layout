@@ -11,7 +11,7 @@ import UIKit
 struct EHPinningOptions: OptionSet {
     let rawValue: Int
 
-    static let none     = EHPinningOptions(rawValue: 0)
+    static let none     = EHPinningOptions([])
     static let leading  = EHPinningOptions(rawValue: 1 << 0)
     static let centerX  = EHPinningOptions(rawValue: 1 << 1)
     static let trailing = EHPinningOptions(rawValue: 1 << 2)

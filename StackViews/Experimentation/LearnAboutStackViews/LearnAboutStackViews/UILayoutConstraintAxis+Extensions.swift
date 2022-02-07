@@ -8,22 +8,19 @@
 
 import UIKit
 
-extension UILayoutConstraintAxis {
+extension NSLayoutConstraint.Axis {
 
     var textDescription: String {
-        get {
-            var desc = ""
-            switch self {
-                case .horizontal: desc = "horizontal"
-                case .vertical: desc = "vertical"
-            }
-            return desc
+        switch self {
+        case .horizontal: return "horizontal"
+        case .vertical: return "vertical"
+        @unknown default: return "unknown"
         }
     }
 
 }
 
-extension UILayoutConstraintAxis : EHMultipleChoiceDataSource {
+extension NSLayoutConstraint.Axis : EHMultipleChoiceDataSource {
 
     func title() -> String {
         return "UILayoutConstraintAxis"
@@ -36,7 +33,7 @@ extension UILayoutConstraintAxis : EHMultipleChoiceDataSource {
     func choiceText(atIndex: Int) -> String {
         var text = "Unknown"
 
-        if let indexChoice = UILayoutConstraintAxis(rawValue: atIndex) {
+        if let indexChoice = NSLayoutConstraint.Axis(rawValue: atIndex) {
             text = indexChoice.textDescription
         }
 
@@ -46,7 +43,7 @@ extension UILayoutConstraintAxis : EHMultipleChoiceDataSource {
     func isChoiceSelected(atIndex: Int) -> Bool {
         var selected = false
 
-        if let indexChoice = UILayoutConstraintAxis(rawValue: atIndex) {
+        if let indexChoice = NSLayoutConstraint.Axis(rawValue: atIndex) {
             selected = (indexChoice == self)
         }
 
@@ -66,7 +63,7 @@ extension UILayoutConstraintAxis : EHMultipleChoiceDataSource {
             let oppositeOfInputIndex = (atIndex == 0 ? 1 : 0)
             let updatedSelectedIndex = (selected ? atIndex : oppositeOfInputIndex)
             if updatedSelectedIndex != self.rawValue,
-               let updatedEnum = UILayoutConstraintAxis(rawValue: updatedSelectedIndex) {
+               let updatedEnum = NSLayoutConstraint.Axis(rawValue: updatedSelectedIndex) {
                 self = updatedEnum
             }
         }

@@ -8,24 +8,21 @@
 
 import UIKit
 
-extension UIStackViewDistribution {
+extension UIStackView.Distribution {
 
     var textDescription: String {
-        get {
-            var desc = ""
-            switch self {
-                case .fill:               desc = "fill"
-                case .fillEqually:        desc = "fillEqually"
-                case .fillProportionally: desc = "fillProportionally"
-                case .equalSpacing:       desc = "equalSpacing"
-                case .equalCentering:     desc = "equalCentering"
-            }
-            return desc
+        switch self {
+        case .fill: return "fill"
+        case .fillEqually: return "fillEqually"
+        case .fillProportionally: return "fillProportionally"
+        case .equalSpacing: return "equalSpacing"
+        case .equalCentering: return "equalCentering"
+        @unknown default: return "unknown"
         }
     }
 }
 
-extension UIStackViewDistribution : EHMultipleChoiceDataSource {
+extension UIStackView.Distribution : EHMultipleChoiceDataSource {
 
     func title() -> String {
         return "UIStackViewDistribution"
@@ -38,7 +35,7 @@ extension UIStackViewDistribution : EHMultipleChoiceDataSource {
     func choiceText(atIndex: Int) -> String {
         var text = "Unknown"
 
-        if let indexChoice = UIStackViewDistribution(rawValue: atIndex) {
+        if let indexChoice = UIStackView.Distribution(rawValue: atIndex) {
             text = indexChoice.textDescription
         }
 
@@ -48,7 +45,7 @@ extension UIStackViewDistribution : EHMultipleChoiceDataSource {
     func isChoiceSelected(atIndex: Int) -> Bool {
         var selected = false
 
-        if let indexChoice = UIStackViewDistribution(rawValue: atIndex) {
+        if let indexChoice = UIStackView.Distribution(rawValue: atIndex) {
             selected = (indexChoice == self)
         }
 
@@ -65,7 +62,7 @@ extension UIStackViewDistribution : EHMultipleChoiceDataSource {
 
     mutating func setChoice(selected: Bool, atIndex: Int) {
         if atIndex < choiceCount() && selected {
-            if let updatedEnum = UIStackViewDistribution(rawValue: atIndex) {
+            if let updatedEnum = UIStackView.Distribution(rawValue: atIndex) {
                 self = updatedEnum
             }
         }

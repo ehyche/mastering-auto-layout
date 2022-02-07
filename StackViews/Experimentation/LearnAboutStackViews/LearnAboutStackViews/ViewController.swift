@@ -36,21 +36,21 @@ class ViewController: UIViewController {
 
         view.addSubview(stackView)
 
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
-        stackView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
 
         titleLabel.text = "Learn About Stack Views"
         titleLabel.textColor = UIColor.black
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont(name: "OpenSans-Bold", size: 24.0)
-        titleLabel.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+        titleLabel.setContentHuggingPriority(UILayoutPriority.required, for: .vertical)
 
         containerView.backgroundColor = UIColor.darkGray
         containerView.layer.borderColor = UIColor.black.cgColor
         containerView.layer.borderWidth = 2.0
-        containerView.setContentHuggingPriority(UILayoutPriorityDefaultLow, for: .vertical)
+        containerView.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .vertical)
 
         demonstrationStackView.translatesAutoresizingMaskIntoConstraints = false
         demonstrationStackView.backgroundColor = UIColor.lightGray
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         bottomStackView.distribution = .fill
         bottomStackView.alignment = .center
         bottomStackView.spacing = 20.0
-        bottomStackView.setContentHuggingPriority(UILayoutPriorityRequired, for: .vertical)
+        bottomStackView.setContentHuggingPriority(UILayoutPriority.required, for: .vertical)
 
         contentButton.setTitle("Content", for: .normal)
         contentButton.setTitleColor(UIColor.darkGray, for: .normal)
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         parametersButton.setTitle("Parameters", for: .normal)
         parametersButton.setTitleColor(UIColor.darkGray, for: .normal)
         parametersButton.titleLabel?.font = UIFont(name: "OpenSans-Bold", size: 24.0)
-        parametersButton.setContentHuggingPriority(UILayoutPriorityDefaultLow-1, for: .horizontal)
+        parametersButton.setContentHuggingPriority(UILayoutPriority.defaultLow-1, for: .horizontal)
         parametersButton.addTarget(self, action: #selector(parametersButtonTapped(sender:)), for: .touchUpInside)
 
         animatedLabel.text = "Animated"

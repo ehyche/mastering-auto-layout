@@ -8,25 +8,22 @@
 
 import UIKit
 
-extension UIStackViewAlignment {
+extension UIStackView.Alignment {
 
     var textDescription: String {
-        get {
-            var desc = ""
-            switch self {
-                case .fill:          desc = "fill"
-                case .leading:       desc = "leading"
-                case .firstBaseline: desc = "firstBaseline"
-                case .center:        desc = "center"
-                case .trailing:      desc = "trailing"
-                case .lastBaseline:  desc = "lastBaseline"
-            }
-            return desc
+        switch self {
+        case .fill: return "fill"
+        case .leading: return "leading"
+        case .firstBaseline: return "firstBaseline"
+        case .center: return "center"
+        case .trailing: return "trailing"
+        case .lastBaseline: return "lastBaseline"
+        @unknown default: return "unknown"
         }
     }
 }
 
-extension UIStackViewAlignment: EHMultipleChoiceDataSource {
+extension UIStackView.Alignment: EHMultipleChoiceDataSource {
 
     func title() -> String {
         return "UIStackViewAlignment"
@@ -39,7 +36,7 @@ extension UIStackViewAlignment: EHMultipleChoiceDataSource {
     func choiceText(atIndex: Int) -> String {
         var text = "Unknown"
 
-        if let indexChoice = UIStackViewAlignment(rawValue: atIndex) {
+        if let indexChoice = UIStackView.Alignment(rawValue: atIndex) {
             text = indexChoice.textDescription
         }
 
@@ -49,7 +46,7 @@ extension UIStackViewAlignment: EHMultipleChoiceDataSource {
     func isChoiceSelected(atIndex: Int) -> Bool {
         var selected = false
 
-        if let indexChoice = UIStackViewAlignment(rawValue: atIndex) {
+        if let indexChoice = UIStackView.Alignment(rawValue: atIndex) {
             selected = (indexChoice == self)
         }
 
@@ -66,7 +63,7 @@ extension UIStackViewAlignment: EHMultipleChoiceDataSource {
 
     mutating func setChoice(selected: Bool, atIndex: Int) {
         if atIndex < choiceCount() && selected {
-            if let updatedEnum = UIStackViewAlignment(rawValue: atIndex) {
+            if let updatedEnum = UIStackView.Alignment(rawValue: atIndex) {
                 self = updatedEnum
             }
         }

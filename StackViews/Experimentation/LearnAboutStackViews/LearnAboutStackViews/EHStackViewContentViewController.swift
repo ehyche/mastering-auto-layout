@@ -110,10 +110,10 @@ class EHStackViewContentViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
 
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -184,7 +184,7 @@ class EHStackViewContentViewController: UIViewController {
         nameLabel.text = titleText(forArrangedSubview: view)
         nameLabel.textColor = UIColor.black
         nameLabel.font = UIFont(name: "OpenSans-Semibold", size: 14.0)
-        nameLabel.setContentHuggingPriority(UILayoutPriorityDefaultLow-1, for: .horizontal)
+        nameLabel.setContentHuggingPriority(UILayoutPriority.defaultLow-1, for: .horizontal)
 
         let deleteImageView = UIImageView(image: UIImage(named: "trash-can"))
         deleteImageView.isUserInteractionEnabled = true

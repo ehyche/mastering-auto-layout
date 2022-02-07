@@ -95,7 +95,7 @@ class EHMultipleChoiceViewController: UIViewController {
             rowStackView.distribution = .fill
             rowStackView.alignment = .center
             rowStackView.isLayoutMarginsRelativeArrangement = true
-            rowStackView.layoutMargins = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+            rowStackView.layoutMargins = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
             let rowLabel = UILabel(frame: .zero)
             rowLabel.font = UIFont(name: "OpenSans-Semibold", size: 14.0)
             rowLabel.textColor = textColorEnabled
